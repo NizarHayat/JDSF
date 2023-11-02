@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="circle-container">
+        <div class="circle">
+            <div class="quarter top-left">Pizza</div>
+            <div class="quarter top-right">Burger</div>
+            <div class="quarter bottom-left">Coke</div>
+            <div class="quarter bottom-right">Tea</div>
+            <div class="line"></div>
+        </div>
+    </div>
+</body>
+<style>
+    .circle-container {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .circle {
+        width: 100%;
+        height: 100%;
+        background-color: yellow;
+        border: 2px solid black;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .quarter {
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .top-left {
+        top: 0;
+        left: 0;
+        border-radius: 100% 0 0 0;
+    }
+
+    .top-right {
+        top: 0;
+        right: 0;
+        border-radius: 0 100% 0 0;
+    }
+
+    .bottom-left {
+        bottom: 0;
+        left: 0;
+        border-radius: 0 0 0 100%;
+    }
+
+    .bottom-right {
+        bottom: 0;
+        right: 0;
+        border-radius: 0 0 100% 0;
+    }
+
+    .line {
+        position: fixed;
+        width: 2px;
+        height: 100%;
+        background: black;
+        top: 0;
+        left: 50%;
+        transform: translateX(-1px);
+        animation: spin 4s linear 1 forwards;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: translateX(-1px) rotate(0deg);
+        }
+        100% {
+            transform: translateX(-1px) rotate(90deg);
+        }
+    }
+</style>
+</html>
